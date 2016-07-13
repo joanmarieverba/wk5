@@ -15,8 +15,9 @@ console.log(targetNumber);
 // var mybutton = document.querySelector("form input[name=number]");
 // console.log(mybutton);
 var guess = prompt("Input number between 1 and 100");
+
 var numTries = 1;
-while (numTries < 10) {
+while (numTries < 11) {
   // put feedback-frame tag in the html, this is where eveything will go
     var outputFrame =  document.querySelector('feedback-frame');
 
@@ -27,13 +28,18 @@ while (numTries < 10) {
 var feedback = "";
 var done = false;
  if (targetNumber > guess) {
-   feedback = "Guess number " + numTries + ": Your guess was too low";
-} else if (targetNumber < guess) {
-    feedback = "Guess number " + numTries + ": Your guess was too high";
-} else {
-    feedback = "Congratulations! You've guessed the right number!";
+   feedback = "Guess number " + numTries + ": " + guess + " was too low";
+ } else if (targetNumber < guess) {
+    feedback = "Guess number " + numTries + ": " + guess + " was too high";
+  } else {
+    feedback = "Congratulations! " + guess + " was the right number!";
     done = true;
-}
+  }
+  if (isNaN(guess) || guess < 1 || guess > 100) {
+      feedback = "Invalid entry";
+      done = true;
+      numTries = 100;
+  }
 //declare the node with the feedback
   var feedbackNodeTag = document.createElement('feedback-node');
   console.log ("feedbackNodeTag " + feedbackNodeTag);
@@ -61,6 +67,9 @@ var done = false;
 }
 
 
+
+
+
 //var myButton = querySelector
 //mybutton.addEventListener('click', function(e) { ... }
 
@@ -70,12 +79,7 @@ var done = false;
 //     // Get the value of the input field with id="numberEntered"
 //     n = document.getElementById("numberEntered").value;
 //
-//     // If x is Not a Number or less than one or greater than 10
-//     if (isNaN(n) || n < 1 || n > 100) {
-//         text = "Input not valid";
-//     } else {
-//         text = "Input OK";
-//     }
+
 //     document.getElementById("demo").innerHTML = text;
 // }
 //
@@ -89,3 +93,12 @@ var done = false;
 
 
 //  http://www.w3schools.com/js/tryit.asp?filename=tryjs_validation_number
+
+//
+// document.querySelectorAll('selector')[whole_number].value
+// which also uses CSS selector to select elements
+// but it returns all elements with that selector as a static Nodelist.
+// document.querySelectorAll('#searchTxt')[0].value; selected by id
+// document.querySelectorAll('.searchField')[0].value; selected by class
+// document.querySelectorAll('input')[0].value; selected by tagname
+// document.querySelectorAll('[name="searchTxt"]')[0].value; selected by name

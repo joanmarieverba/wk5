@@ -1,0 +1,10 @@
+feedback-inner {
+  width : 100%;
+  font-size: 14px;
+  top: 300px;
+  left : 0;
+  border: 3px solid #73AD21;
+  background-color: green;
+  display : block;
+
+}
