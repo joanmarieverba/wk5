@@ -9,17 +9,18 @@
 <body>
   <top-banner><h1>Guess A Number</h1></top-banner>
 
-  <p>Please input a number between 1 and 100 (including 1 or 100)
-  <br> and click submit:</p>
+  <div>Please input a number between 1 and 100 (including 1 or 100)
+  <br> and click submit:</div>
+  <div>You get 10 guesses<div>
   <feedback-frame></feedback-frame>
 
+  <!-- the variable "number" will hold the input -->
+  <!-- when there is a click, execute function "GuessNumber" in JavaScript -->
 
-<!--
 <form>
-  Enter number: <input type="text" name="number"><br>
-  <input type="submit" value="Submit">
+  Enter number: <input type="text" name="number">
+  <input type="button" onClick="GuessNumber()" value="Submit">
 </form>
--->
 
   <script src="Guess-A-Number.js" type="text/javascript"></script>
 </body>
