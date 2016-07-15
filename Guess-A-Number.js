@@ -28,7 +28,7 @@ function GuessNumber (){
     } else if (targetNumber < guess) {
       feedback = "Guess number " + numTries + ": " + guess + " was too high. Enter another number to try again.";
     } else if (targetNumber === guess) {
-      feedback = "Congratulations! " + guess + " was the right number! Enter another number to play again.";
+      feedback = "Congratulations! " + guess + " was the right number! \n Enter another number to play again.";
       done = true;
     }
     if (isNaN(guess) || guess < 1 || guess > 100) {
